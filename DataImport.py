@@ -1,8 +1,8 @@
 
 import psycopg2
-#Läd die Daten über MYSQL nach Verbindung mit der Datenbank
-#über eine SQL Querie in die election Datenbank
-#der Cursor ermöglicht die connection und execute führt die jeweiligen
+#LÃ¤d die Daten durch eine psycopg2 Verbindung mit der postgresql Datenbank,
+#Ã¼ber eine SQL Querie in die election Datenbank
+#der Cursor ermÃ¶glicht die connection und execute fÃ¼hrt die jeweiligen
 #Sql Statements aus!
 connection = psycopg2.Connect(host='localhost', user='kikou', passwd='hallo123', db='election')
 cursor = connection.cursor()
