@@ -10,11 +10,12 @@ reader = csv.reader(in_file,delimiter=";")
 writer = csv.writer(out_file,delimiter=";")
 
 for row in reader:
+    #row[1] = row[1].replace(";",",")#ersetzt evtl. auftauchende ";", um frÃ¼hzeitige Zelltrennung zu vermeiden
     row[2] = row[2].replace("True","1")#wandelt die boolschen Werte von True/False zu 1 und 0
     row[2] = row[2].replace("False","0")
     row[4] = row[4].replace("T"," ")#Entfernt das T zum einlesen des Datums
-    if row[10] != "True":#Entfernt gekürzte tweeets
-                        writer.writerow([row[0],row[1],row[2],row[3],row[4],row[5],row[7],row[8]])# Entfernt überflüssige Rows die nicht in der Datenbank benötig werden
+    if row[10] != "True":#Entfernt gekÃ¼rzte tweeets
+                        writer.writerow([row[0],row[1],row[2],row[3],row[4],row[5],row[7],row[8]])# Entfernt Ã¼berflÃ¼ssige Rows die nicht in der Datenbank benÃ¶tig werden
         
 in_file.close()
 out_file.close()
